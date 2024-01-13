@@ -1,0 +1,88 @@
+---
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import ShadcnUI from "./icons/ShadcnUI.astro";
+import Redux from "./icons/Redux.astro";
+import Typescript from "./icons/Typescript.astro";
+import React from "./icons/React.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  SHADCN: {
+    name: "Shadcn UI",
+    class: "bg-zinc-950 text-white",
+    icon: ShadcnUI,
+  },
+  REDUX: {
+    name: "Redux",
+    class: "bg-violet-950 text-white",
+    icon: Redux,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-sky-950 text-white",
+    icon: Typescript,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+};
+const PROJECTS = [
+  {
+    title: "INFO - All-in-One ERP",
+    description:
+      "INFO is your strategic ally to drive your company's growth. It offers a unified platform that adapts to the specific needs of your industry, from resource management to advanced analytics.",
+    link: "https://www.hakisoft.com/servicios/info-erp",
+    image: "/projects/infoerp.webp",
+    tags: [TAGS.TYPESCRIPT, TAGS.REACT, TAGS.REDUX, TAGS.SHADCN, TAGS.TAILWIND],
+  },
+  {
+    title: "Hakisoft - Landing Page",
+    description:
+      "This built-from-scratch platform, optimized for performance and SEO, has increased the company's global reach, improved the user experience and effortlessly converted visitors into customers.",
+    link: "https://www.hakisoft.com",
+    image: "/projects/landinghaki.webp",
+    tags: [TAGS.TYPESCRIPT, TAGS.REACT, TAGS.SHADCN, TAGS.TAILWIND, TAGS.NEXT],
+  },
+];
+---
+
+<div class="flex flex-col gap-16">
+  {
+    PROJECTS.map(({ image, title, description, tags }) => (
+      <article>
+        <h3 class="text-xl font-semibold text-yellow-500 mb-2">{title}</h3>
+        <p class="text-base mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-2 flex-wrap mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-md text-xs ${tag.class} py-[6px] px-2 border border-white/10 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl mt-5 shadow-white/10 aspect-video"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      </article>
+    ))
+  }
+</div>

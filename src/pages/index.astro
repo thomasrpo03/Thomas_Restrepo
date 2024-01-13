@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+---
+
+<Layout
+  title="Thomas's Portfolio - Software Engineer & Web Developer"
+  description="¡Impulsa tu éxito empresarial con un Ingeniero de Software apasionado! Con más de 3 años de experiencia en desarrollo web, desde la vibrante Medellín, Colombia. Estoy listo para llevar tu proyecto al siguiente nivel con soluciones creativas y efectivas. ¡Contrátame hoy y transforma tu visión en realidad!"
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-44">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="/thomas-profile.webp"
+        alt="ThomasPhoto"
+      />
+      <h1
+        class="text-white text-3xl lg:text-[2.5rem] font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey! I'm Thomas
+        <a
+          class="flex justify-center items-center animate-bounce"
+          href="https://www.linkedin.com/in/thomas-restrepo03/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Badge>Available to Work</Badge>
+        </a>
+      </h1>
+      <h2 class="text-sm lg:text-base text-wrap max-w-[700px]">
+        <span>+3 years of experience.</span>
+        <span class="text-sky-400/90"
+          >Software Engineer focused on Web Development.</span
+        >
+        <span class="text-yellow-500 dark:text-yellow-200"
+          >From Medellín, Colombia 🇨🇴.</span
+        > My expertise lies in crafting <span class="text-cyan-500/90"
+          >innovative solutions for businesses</span
+        >.
+      </h2>
+
+      <nav class="flex gap-x-3 gap-y-2 mt-8 flex-wrap justify-center">
+        <SocialPill href="https://www.linkedin.com/in/thomas-restrepo03/">
+          <LinkedInIcon class="size-5" />
+          Linked in
+        </SocialPill>
+        <SocialPill href="https://github.com/thomasrpo03">
+          <GithubIcon class="size-5" />
+          Github
+        </SocialPill>
+        <SocialPill href="mailto:thomasrestrepoorrego@gmail.com">
+          <MailIcon class="size-5" />
+          thomasrestrepoorrego@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="experience">
+      <h2
+        class="text-2xl md:text-3xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <BriefcaseIcon class="size-10" />
+        Work Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <h2
+        class="text-2xl md:text-3xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <CodeIcon class="size-10" />
+        Latest Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>

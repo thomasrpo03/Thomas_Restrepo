@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Currently...",
+    title: "Frontend Architect - Hakisoft",
+    description:
+      "I led Hakisoft's Frontend team, optimizing workflows, improving code quality, development practices and fostering a collaborative environment to improve overall productivity.",
+  },
+
+  {
+    date: "January - 2022",
+    title: "Systems Administrator - C.I.A S.A.S",
+    description:
+      "Managed and maintained the organization's IT infrastructure, ensuring optimal performance, security, and reliability. Leveraged expertise in system administration to implement efficient solutions, troubleshoot issues, and enhance overall system functionality.",
+  },
+  {
+    date: "October - 2019.",
+    title: "Systems Technician - Kingdom Gates & CO. (Internship)",
+    description:
+      "Gaining hands-on experience in diagnosing and resolving technical issues. Assisted in the maintenance and troubleshooting of computer systems, contributing to the smooth operation of IT infrastructure. This valuable experience enhanced my technical skills and laid the foundation for my journey in the field of systems administration.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
